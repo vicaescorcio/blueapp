@@ -36,10 +36,4 @@ RSpec.describe Link, type: :model do
       it { expect(link.encode).to match(/[^\s]/) }
     end
   end
-
-  describe 'Decode short_code' do
-    context 'when link is successfully encoded' do
-      it { expect(Link.decode(link.encode).short_id).to eq(link.short_id) }
-    end
-  end
 end

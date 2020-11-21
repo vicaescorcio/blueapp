@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+- API
+
+* Create short link 
+  POST   /links, params: {link: { original: $url } }
+* Show link redirects to the original url
+   GET    /links/$short_code

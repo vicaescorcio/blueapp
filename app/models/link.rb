@@ -2,7 +2,7 @@ class Link < ApplicationRecord
   validates :original, presence: true, format: URI::regexp(%w[http https])
   validates :short_id, uniqueness: true
 
-  before_validation :generate_short_id
+  before_validation :generate_short_id, on: :create
 
   ALPHABET =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split(//)
