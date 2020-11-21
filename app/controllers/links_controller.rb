@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     if @link.save
       render json: { 'short': @link.encode }, status: 201
     else
-      render json: { 'errors': @link.errors.full_messages}, status: 422
+      render json: { 'errors': @link.errors.full_messages }, status: 422
     end
   end
 
