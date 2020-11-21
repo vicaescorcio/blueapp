@@ -1,9 +1,11 @@
 class LinksController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     @link = Link.new(link_params)
 
     if @link.save
-      render json: { 'short': @link.short }, status: 201
+      render json: { 'short': @link.encode }, status: 201
     else
       render json: { 'errors': @link.errors.full_messages}, status: 422
     end
